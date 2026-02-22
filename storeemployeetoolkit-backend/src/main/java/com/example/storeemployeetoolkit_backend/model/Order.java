@@ -9,7 +9,7 @@ import java.util.List;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int order_id;
 
     private String customer_name;
     private String phone_number;
@@ -28,7 +28,7 @@ public class Order {
     private List<OrderItem> items ;
 
     public int getId() {
-        return id;
+        return order_id;
     }
 
     public String getCustomer_name() {
