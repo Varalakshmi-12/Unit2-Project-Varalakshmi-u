@@ -1,4 +1,7 @@
 package com.example.storeemployeetoolkit_backend.repositories;
 
-public interface ProductRepository {
+import com.example.storeemployeetoolkit_backend.model.Product;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProductRepository extends JpaRepository<Product,Long> {
 }
