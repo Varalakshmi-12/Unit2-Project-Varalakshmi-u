@@ -9,7 +9,7 @@ import java.util.List;
 public class Order {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int order_id;
+    private long order_id;
 
     private String customer_name;
     private String phone_number;
@@ -27,7 +27,7 @@ public class Order {
     @JoinColumn(name = "order_id")
     private List<OrderItem> items ;
 
-    public int getId() {
+    public long getId() {
         return order_id;
     }
 
