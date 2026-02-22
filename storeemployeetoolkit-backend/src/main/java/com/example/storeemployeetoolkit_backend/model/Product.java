@@ -1,15 +1,15 @@
 package com.example.storeemployeetoolkit_backend.model;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 @Entity
+@Table (name="Products")
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long product_id;
+
+    @Column(nullable = false)
     private String name;
     private String description;
     private double price;
@@ -23,11 +23,11 @@ public class Product {
     }
 
     public Long getId() {
-        return id;
+        return product_id;
     }
 
     public void setId(Long id) {
-        this.id = id;
+        this.product_id = id;
     }
 
     public String getName() {
