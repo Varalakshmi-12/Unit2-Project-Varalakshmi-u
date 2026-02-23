@@ -1,6 +1,6 @@
 package com.example.storeemployeetoolkit_backend.services;
 
-import com.example.storeemployeetoolkit_backend.model.Order;
+import com.example.storeemployeetoolkit_backend.models.Order;
 import com.example.storeemployeetoolkit_backend.repositories.OrderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
