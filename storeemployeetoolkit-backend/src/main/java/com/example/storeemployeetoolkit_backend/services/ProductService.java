@@ -50,6 +50,7 @@ public class ProductService {
 
         product.setName(dto.getProductName());
         product.setPrice(dto.getPrice());
+        product.setProductNumber(dto.getProductNumber());
 
 
         return repo.save(product);
