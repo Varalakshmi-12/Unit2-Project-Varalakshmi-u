@@ -17,9 +17,9 @@ public class Order {
 
     public Order() {
     }
-    public Order(String customer_name, String phone_number, double total){
-        this.customerName=customer_name;
-        this.phoneNumber=phone_number;
+    public Order(String customerName, String phoneNumber, double total){
+        this.customerName=customerName;
+        this.phoneNumber=phoneNumber;
         this.total=total;
     }
 
@@ -35,16 +35,16 @@ public class Order {
         return customerName;
     }
 
-    public void setCustomer_name(String customer_name) {
-        this.customerName = customer_name;
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 
     public String getPhone_number() {
         return phoneNumber;
     }
 
-    public void setPhone_number(String phone_number) {
-        this.phoneNumber = phone_number;
+    public void setPhone(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
 
     public double getTotal() {
