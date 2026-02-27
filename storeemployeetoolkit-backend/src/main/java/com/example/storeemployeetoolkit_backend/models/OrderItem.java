@@ -10,39 +10,41 @@ public class OrderItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private Long id;
 
-    private int product_id;
-    private int quantity;
+    private String productNumber;
+    private String productName;
     private double price;
+    private int quantity;
 
     public OrderItem() {
     }
 
-    public OrderItem(int product_id, int quantity, double price) {
-        this.product_id = product_id;
-        this.quantity = quantity;
+    public OrderItem(String productNumber, String productName, double price, int quantity) {
+        this.productNumber = productNumber;
+        this.productName = productName;
         this.price = price;
+        this.quantity = quantity;
     }
 
-    public int getId() {
+    public Long getId() {
         return id;
     }
 
-    public int getProduct_id() {
-        return product_id;
+    public String getProductNumber() {
+        return productNumber;
     }
 
-    public void setProduct_id(int product_id) {
-        this.product_id = product_id;
+    public void setProductNumber(String productNumber) {
+        this.productNumber = productNumber;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public String getProductName() {
+        return productName;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setProductName(String productName) {
+        this.productName = productName;
     }
 
     public double getPrice() {
@@ -52,4 +54,17 @@ public class OrderItem {
     public void setPrice(double price) {
         this.price = price;
     }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
 }
+
+
+
+
+

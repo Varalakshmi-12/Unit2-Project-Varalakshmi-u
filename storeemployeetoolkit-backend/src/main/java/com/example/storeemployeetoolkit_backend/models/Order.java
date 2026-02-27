@@ -11,15 +11,15 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long order_id;
 
-    private String customer_name;
-    private String phone_number;
+    private String customerName;
+    private String phoneNumber;
     private double total;
 
     public Order() {
     }
     public Order(String customer_name, String phone_number, double total){
-        this.customer_name=customer_name;
-        this.phone_number=phone_number;
+        this.customerName=customer_name;
+        this.phoneNumber=phone_number;
         this.total=total;
     }
 
@@ -32,19 +32,19 @@ public class Order {
     }
 
     public String getCustomer_name() {
-        return customer_name;
+        return customerName;
     }
 
     public void setCustomer_name(String customer_name) {
-        this.customer_name = customer_name;
+        this.customerName = customer_name;
     }
 
     public String getPhone_number() {
-        return phone_number;
+        return phoneNumber;
     }
 
     public void setPhone_number(String phone_number) {
-        this.phone_number = phone_number;
+        this.phoneNumber = phone_number;
     }
 
     public double getTotal() {
