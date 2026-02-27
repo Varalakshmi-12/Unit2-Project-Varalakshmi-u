@@ -2,48 +2,53 @@ package com.example.storeemployeetoolkit_backend.models;
 import jakarta.persistence.*;
 
 @Entity
-@Table (name="Products")
+@Table (name="Products" ,uniqueConstraints = @UniqueConstraint(columnNames = "productNumber"))
 public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long product_id;
+    private Long id;
+
+    @Column(nullable = false, unique = true)
+    private String productNumber;   // MUST be unique
 
     @Column(nullable = false)
-    private String name;
-    private String description;
+    private String productName;
+
     private double price;
 
-    public Product(){}
+    public Product() {}
 
-    public Product(String name, String description, double price){
-        this.name=name;
-        this.description=description;
-        this.price=price;
+    public Product(String productNumber, String productName, double price) {
+        this.productNumber = productNumber;
+        this.productName = productName;
+        this.price = price;
     }
 
+    // getters & setters
+
     public Long getId() {
-        return product_id;
+        return id;
     }
 
     public void setId(Long id) {
-        this.product_id = id;
+        this.id = id;
+    }
+
+    public String getProductNumber() {
+        return productNumber;
+    }
+
+    public void setProductNumber(String productNumber) {
+        this.productNumber = productNumber;
     }
 
     public String getName() {
-        return name;
+        return productName;
     }
 
     public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+        this.productName = name;
     }
 
     public double getPrice() {

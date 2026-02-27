@@ -1,37 +1,43 @@
 package com.example.storeemployeetoolkit_backend.controllers;
 
-import com.example.storeemployeetoolkit_backend.models.Product;
-import com.example.storeemployeetoolkit_backend.services.ProductService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
 
+
+import com.example.storeemployeetoolkit_backend.dto.ProductDTO;
+import com.example.storeemployeetoolkit_backend.models.Product;
+import com.example.storeemployeetoolkit_backend.repositories.ProductRepository;
+import com.example.storeemployeetoolkit_backend.services.ProductService;
+import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/Products")
 @CrossOrigin(origins="http://localhost:5173")
-@RequestMapping("/api/products")
 public class ProductController {
 
-    @Autowired
-    private ProductService productService;
+    private final ProductService service;
+
+    public ProductController(ProductService service) {
+        this.service = service;
+    }
 
     @GetMapping
-    public List<Product> getAllProducts() {
-        return productService.getAllProducts();
+    public List<Product> getAll() {
+        return service.getAllProducts();
     }
 
     @PostMapping
-    public Product addProduct(@RequestBody Product product){
-        return productService.createProduct(product);
+    public Product create(@RequestBody ProductDTO dto) {
+        return service.createProduct(dto);
     }
 
     @PutMapping("/{id}")
-    public Product update(@PathVariable Long id, @RequestBody Product product){
-        return productService.updateProduct(id ,product);
+    public Product update(@PathVariable Long id, @RequestBody ProductDTO dto) {
+        dto.setId(id);
+        return service.updateProduct(id , dto);
     }
 
     @DeleteMapping("/{id}")
-    public void delete(@PathVariable Long id){
-        productService.deleteProduct(id);
+    public void delete(@PathVariable Long id) {
+        service.deleteProduct(id);
     }
 }
