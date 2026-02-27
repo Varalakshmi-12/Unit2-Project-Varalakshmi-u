@@ -1,8 +1,8 @@
 package com.example.storeemployeetoolkit_backend.services;
 
+import com.example.storeemployeetoolkit_backend.dto.ProductDTO;
 import com.example.storeemployeetoolkit_backend.models.Product;
 import com.example.storeemployeetoolkit_backend.repositories.ProductRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -10,37 +10,53 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    @Autowired
-    private ProductRepository productRepository;
+    private final ProductRepository repo;
 
+    public ProductService(ProductRepository repo) {
+        this.repo = repo;
+    }
+
+    // CREATE
+    public Product createProduct(ProductDTO dto) {
+
+        if (repo.existsByProductNumber(dto.getProductNumber())) {
+            throw new RuntimeException("Product number already exists");
+        }
+
+        Product product = new Product();
+        product.setProductNumber(dto.getProductNumber());
+        product.setName(dto.getProductName());
+        product.setPrice(dto.getPrice());
+
+
+        return repo.save(product);
+    }
+
+    // READ ALL
     public List<Product> getAllProducts() {
-        return productRepository.findAll();
+        return repo.findAll();
     }
 
-    public Product getProductById(Long id){
-        return productRepository.findById(id).orElseThrow();
+    // READ ONE
+    public Product getProductById(Long id) {
+        return repo.findById(id)
+                .orElseThrow(() -> new RuntimeException("Product not found"));
     }
 
-    public Product getProductByName(String name){
-        return productRepository.findAll().stream()
-                .filter(product -> product.getName().equalsIgnoreCase(name))
-                .findFirst()
-                .orElseThrow();
+    // UPDATE
+    public Product updateProduct(Long id, ProductDTO dto) {
+
+        Product product = getProductById(id);
+
+        product.setName(dto.getProductName());
+        product.setPrice(dto.getPrice());
+
+
+        return repo.save(product);
     }
 
-    public Product createProduct(Product product) {
-        return productRepository.save(product);
-    }
-
-    public Product updateProduct(Long id, Product updatedProduct) {
-        Product existingProduct = productRepository.findById(id).orElseThrow();
-        existingProduct.setName(updatedProduct.getName());
-        existingProduct.setDescription(updatedProduct.getDescription());
-        existingProduct.setPrice(updatedProduct.getPrice());
-        return productRepository.save(existingProduct);
-    }
-
-    public void deleteProduct(Long id){
-        productRepository.deleteById(id);
+    // DELETE
+    public void deleteProduct(Long id) {
+        repo.deleteById(id);
     }
 }
