@@ -47,7 +47,7 @@ public class OrderService {
 
         Order order = new Order();
         order.setCustomerName(dto.getCustomerName());
-        order.setPhone(dto.getPhone());
+        order.setPhoneNumber(dto.getPhoneNumber());
         order.setTotal(total);
         order.setItems(items);
 

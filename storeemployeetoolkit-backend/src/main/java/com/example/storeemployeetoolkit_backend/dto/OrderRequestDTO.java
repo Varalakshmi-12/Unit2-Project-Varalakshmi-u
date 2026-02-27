@@ -15,7 +15,7 @@ public class OrderRequestDTO {
         this.customerName = customerName;
     }
 
-    public String getPhone() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 

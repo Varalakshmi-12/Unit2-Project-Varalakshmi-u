@@ -31,7 +31,7 @@ public class Order {
         return order_id;
     }
 
-    public String getCustomer_name() {
+    public String getCustomerName() {
         return customerName;
     }
 
@@ -39,11 +39,11 @@ public class Order {
         this.customerName = customerName;
     }
 
-    public String getPhone_number() {
+    public String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public void setPhone(String phoneNumber) {
+    public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
 
