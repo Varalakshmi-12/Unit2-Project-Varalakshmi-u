@@ -13,40 +13,61 @@ export default function CartPage() {
   const [customerName, setCustomerName] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
+  const isValidPhone = (phoneNumber) => {
+  return /^\d{10}$/.test(phoneNumber);
+};
+
 
   // Adding item by name or ID
   const addItem = () => {
     if (!itemInput.trim()) return;
 
-    const userInput = itemInput.toLowerCase();
+    /*const userInput = itemInput.toLowerCase();
 
     const found =
       mockItems.find(
         (item) =>
           item.name.toLowerCase() === userInput ||
           item.id.toString() === userInput
-      );
+      );*/
+
+    try {
+        const res = await fetch(
+          "http://localhost:8080/api/Products");
+
+          if (!res.ok) {
+            throw new Error("Failed to fetch products" +res.status);
+          }
+        
+        const products = await res.json();
+        console.log("Fetched products:", products);
+        const found = products.find((p) => p.productNumber.toString().toLowerCase() === itemInput.toLowerCase());
+        console.log(found);
+      
 
     if (!found) {
-      setMessage("❌ Invalid item entered");
+      setMessage("❌ Product not found!");
+
       return;
     }
-
     
-    const exists = cart.find((item) => item.id === found.id);
+    const exists = cart.find((item) => item.productNumber === found.productNumber);
 
     if (exists) {
       setCart((prev) =>
         prev.map((item) =>
-          item.id === found.id ? { ...item, quantity: item.quantity + 1 }: item
+          item.productNumber === found.productNumber ? { ...item, quantity: item.quantity + 1 }: item
         )
       );
     } else {
-      setCart((prev) => [...prev, { ...found, quantity: 1 }]);
+      setCart((prev) => [...prev, { productNumber: found.productNumber, name: found.productName, price:found.price, quantity: 1, }]);
     }
 
     setMessage("");
     setItemInput("");
+  }catch (err){
+    setMessage("❌ Error fetching products!");
+  }
   };
 
 
