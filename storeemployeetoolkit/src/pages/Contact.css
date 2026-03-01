@@ -1,0 +1,12 @@
+.contact-container{
+    max-width: 1000px;
+  margin: 50px auto;
+  padding: 10px;
+  text-align: center;
+  line-height: 1.6;
+  background-color: white;
+}
+
+p strong{
+    color: rgb(38, 0, 255);
+}

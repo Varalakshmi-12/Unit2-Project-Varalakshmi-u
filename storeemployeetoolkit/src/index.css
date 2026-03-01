@@ -1,0 +1,97 @@
+#root {
+  background-color: rgb(89, 89, 248);
+  color: black;
+  max-width: 1248px;
+  margin: 0 auto;
+  
+  text-align: center;
+  font-size: 20px;
+}
+
+.main-content{
+   padding-bottom:300px;
+
+   }
+
+.shift-message {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  background-color: #d6e2db;
+  padding: 10px 15px;
+  border-radius: 6px;
+  display: inline-block;
+}
+
+.nav-home a:hover{
+    color:white;
+    padding: 1px 10px;
+    background-color:rgb(0, 255, 64);
+}
+
+/* Large screens (desktop) */
+@media (min-width: 697px) {
+  .button-display {
+    flex-direction: row;
+  }
+  .header-title {
+  font-size: 30px;
+}
+}
+
+
+/* Medium screens (tablet) */
+@media (min-width: 481px) and (max-width: 696px) {
+  .button-display {
+   
+   flex: 1 1 45%;
+    
+    
+  }
+  .nav-right {
+    flex-direction: column;
+    gap :10px;
+  }
+  .shift-buttons {
+  
+   
+   flex: 1 1 45%;
+    
+}
+
+  
+}
+
+/* Small screens (mobile) */
+@media (max-width: 480px) {
+  .button-display {
+    flex-direction: column;
+    gap: 200px;
+  }
+  
+  .nav-right {
+    flex-direction: column;
+    gap :10px;
+  }
+
+  .Button-label{
+    font-size: 20;
+  }
+
+.shift-buttons {
+  flex-direction: column;
+}
+  
+
+  
+  .header-title {
+    font-size: 20px;
+
+  }
+
+  .footer {
+    font-size: 16px;
+  }
+}

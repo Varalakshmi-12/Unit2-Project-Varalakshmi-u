@@ -1,0 +1,42 @@
+.button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #69c97e;
+  border-radius: 10px;
+  padding: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(231, 34, 34, 0.6);
+  transition: transform 0.6s, box-shadow 0.2s;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 10px rgba(3, 253, 3, 0.9);
+
+}
+
+.button img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.button-label {
+  font-size: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.button:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
