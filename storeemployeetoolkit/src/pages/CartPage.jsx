@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { mockItems} from "../testdata/mockData";
+//import { mockItems} from "../testdata/mockData";
 import CartItem from "../components/CartItem";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
@@ -10,6 +10,8 @@ export default function CartPage() {
   const [itemInput, setItemInput] = useState("");
   const [cart, setCart] = useState([]);
   const [message, setMessage] = useState("");
+  const [customerName, setCustomerName] = useState("");
+  const [phoneNumber, setPhoneNumber] = useState("");
 
 
   // Adding item by name or ID
@@ -98,6 +100,19 @@ return (
       <h1>Customer Cart Checkout</h1>
 
       <div className="input-section">
+
+        <input
+          type="text"
+          placeholder="Enter customer name"
+          value={customerName}
+          onChange={(e) => setCustomerName(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Enter phone number"
+          value={phoneNumber}
+          onChange={(e) => setPhoneNumber(e.target.value)}
+        />
         <input
           type="text"
           placeholder="Enter item name or ID"
