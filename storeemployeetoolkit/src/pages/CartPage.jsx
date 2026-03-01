@@ -71,37 +71,74 @@ export default function CartPage() {
   };
 
 
-  const handlePayment = () => {
+  const handlePayment = async () => {
+
+    if (!customerName.trim())  {
+      setMessage("❌ Please enter customer name !");
+      return;
+    }
+
+    if (!isValidPhone(phoneNumber)) {
+      setMessage("❌ Please enter a valid 10-digit phone number!");
+      return;
+    }
+
     if (cart.length === 0) {
       setMessage("🛒Cart is empty!");
       return;
     }
-    
+
     setMessage("processing.....");
+
+    const orderData = {
+      customerName,
+      phoneNumber,
+      items: cart.map((item) => ({
+        productNumber: item.productNumber.toString(),
+        quantity: item.quantity
+      }))
+    };
+
+    try {
+      const res = await fetch("http://localhost:8080/api/orders", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(orderData)
+      });
+      if (!res.ok) throw new Error("Failed to save order");
     
-    setTimeout(() => {
-      setMessage("✅ Payment successful! Your change due is $0.00.");
+    //setMessage("processing.....");
+    
+    //setTimeout(() => {
+      setMessage("✅ Payment Successful! Your Order is Saved successfully.");
       setCart([]); 
+      setCustomerName("");
+      setPhoneNumber("");
       
-    }, 2000);
+    //}, 2000);
     
-  };
+  }catch (err) {
+    setMessage("❌ Error saving Order.");
+  }
+};
+
 
   
-  const updateQuantity = (id, value) => {
+  const updateQuantity = (productNumber, value) => {
     const qty = parseInt(value);
     if (qty < 1 || isNaN(qty)) return;
 
+
     setCart((prev) =>
       prev.map((item) =>
-        item.id === id ? { ...item, quantity: qty } : item
+        item.productNumber === productNumber ? { ...item, quantity: qty } : item
       )
     );
   };
 
    
-  const deleteItem = (id) => {
-    setCart((prev) => prev.filter((item) => item.id !== id));
+  const deleteItem = (productNumber) => {
+    setCart((prev) => prev.filter((item) => item.productNumber !== productNumber));
   };
 
   
@@ -111,6 +148,8 @@ export default function CartPage() {
   );
   const tax = subtotal * 0.08;
   const total = subtotal + tax;
+
+
 
 
 return (
