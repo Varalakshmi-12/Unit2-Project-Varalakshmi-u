@@ -19,7 +19,7 @@ export default function CartPage() {
 
 
   // Adding item by name or ID
-  const addItem = () => {
+  const addItem = async () => {
     if (!itemInput.trim()) return;
 
     /*const userInput = itemInput.toLowerCase();
