@@ -11,6 +11,7 @@ function Header() {
   const isCredit = pathname === "/creditcard";
   const isAbout = pathname === "/about";
   const isContact = pathname === "/contact";
+  const isOrders = pathname === "/orders";
 
 
   return (
@@ -19,6 +20,7 @@ function Header() {
       
       <nav className="nav-left">
         <NavLink to="/" className="nav-item">Home</NavLink>
+        <NavLink to="/orders" className="nav-item">Orders</NavLink>
       </nav>
 
       
