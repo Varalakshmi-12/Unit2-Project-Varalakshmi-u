@@ -56,6 +56,7 @@ export default function CartItem({
       <thead>
         <tr>
           <th>ProductNumber</th>
+          
           <th>Price</th>
           <th>Qty</th>
           <th>Total</th>
@@ -67,6 +68,7 @@ export default function CartItem({
         {cart.map((item) => (
           <tr key={item.productNumber}>
             <td>{item.productNumber}</td>
+            
             <td>{item.price}</td>
 
             <td>
