@@ -106,6 +106,7 @@ export default function CartPage() {
         body: JSON.stringify(orderData)
       });
       if (!res.ok) throw new Error("Failed to save order");
+      console.log("Order saved successfully");
     
     //setMessage("processing.....");
     
