@@ -13,7 +13,7 @@ export async function getOrders(){
 
 export async function getOrdersByPhone(phoneNumber){
     try {
-        const res = await fetch(`${BASE_URL}/orders?phone=${encodeURIComponent(phoneNumber)}`);
+        const res = await fetch(`${BASE_URL}/orders/phone/${phoneNumber}`);
         if (!res.ok) throw new Error("Failed to fetch orders by phone number: " + res.status);
         return await res.json();
     } catch (err) {
