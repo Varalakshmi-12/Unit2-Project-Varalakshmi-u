@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+/*import React, { useEffect, useState } from "react";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
 import "./OrdersPage.css";
@@ -56,4 +56,4 @@ export default function OrdersPage() {
       </Link>
     </section>
   );
-}
+}*/
