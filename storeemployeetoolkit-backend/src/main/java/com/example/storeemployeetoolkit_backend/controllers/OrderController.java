@@ -26,4 +26,9 @@ public class OrderController {
     public List<Order> getOrders() {
         return service.getAllOrders();
     }
+
+    @GetMapping("/phone/{phoneNumber}")
+    public List<Order> getOrdersByPhone(@PathVariable String phoneNumber) {
+        return service.getOrdersByPhone(phoneNumber);
+    }
 }

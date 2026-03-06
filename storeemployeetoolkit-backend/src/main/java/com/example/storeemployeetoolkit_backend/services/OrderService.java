@@ -57,4 +57,8 @@ public class OrderService {
     public List<Order> getAllOrders() {
         return orderRepo.findAll();
     }
+
+    public List<Order> getOrdersByPhone(String phoneNumber) {
+        return orderRepo.findByPhoneNumber(phoneNumber);
+    }
 }
