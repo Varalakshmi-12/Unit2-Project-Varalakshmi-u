@@ -21,6 +21,7 @@ function Header() {
       <nav className="nav-left">
         <NavLink to="/" className="nav-item">Home</NavLink>
         <NavLink to="/orders" className="nav-item">Orders</NavLink>
+        <NavLink to="/products" className="nav-item">Products</NavLink>
       </nav>
 
       
@@ -42,6 +43,7 @@ function Header() {
         <nav className="nav-right">
           <NavLink to="/about" className="nav-item">About</NavLink>
           <NavLink to="/contact" className="nav-item">Contact</NavLink>
+          
         </nav>
       )}
 
