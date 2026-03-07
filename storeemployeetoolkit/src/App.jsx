@@ -9,6 +9,7 @@ import ShiftPage from "./pages/ShiftPage";
 import CartPage from "./pages/CartPage";
 import CreditCardSignup from "./pages/CreditCardPage";
 import OrdersPage from "./pages/OrdersPage";
+import ProductsPage from "./pages/ProductsPage";
 import "./index.css";
 
 
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/orders" element={<OrdersPage />} />
+          <Route path="/products" element={<ProductsPage />} />
         </Routes>
       </main>
       <Footer />

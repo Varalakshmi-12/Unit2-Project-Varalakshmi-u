@@ -47,8 +47,8 @@ public class Product {
         return productName;
     }
 
-    public void setName(String name) {
-        this.productName = name;
+    public void setName(String productName) {
+        this.productName = productName;
     }
 
     public double getPrice() {

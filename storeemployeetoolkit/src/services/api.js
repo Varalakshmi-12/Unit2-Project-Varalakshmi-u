@@ -24,7 +24,7 @@ export async function getOrdersByPhone(phoneNumber){
 
 export async function getProducts(){
     try {
-        const res = await fetch(`${BASE_URL}/products`);
+        const res = await fetch(`${BASE_URL}/Products`);
         if (!res.ok) throw new Error("Failed to fetch products: " + res.status);
         return await res.json();
     } catch (err) {
