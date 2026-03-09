@@ -25,7 +25,7 @@ public class ProductService {
 
         Product product = new Product();
         product.setProductNumber(dto.getProductNumber());
-        product.setName(dto.getProductName());
+        product.setProductName(dto.getProductName());
         product.setPrice(dto.getPrice());
 
 
@@ -48,7 +48,7 @@ public class ProductService {
 
         Product product = getProductById(id);
 
-        product.setName(dto.getProductName());
+        product.setProductName(dto.getProductName());
         product.setPrice(dto.getPrice());
         product.setProductNumber(dto.getProductNumber());
 

@@ -37,7 +37,7 @@ public class OrderService {
 
             OrderItem item = new OrderItem();
             item.setProductNumber(p.getProductNumber());
-            item.setProductName(p.getName());
+            item.setProductName(p.getProductName());
             item.setPrice(p.getPrice());
             item.setQuantity(i.getQuantity());
 
