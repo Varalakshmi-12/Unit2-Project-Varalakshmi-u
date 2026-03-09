@@ -10,6 +10,8 @@ import CartPage from "./pages/CartPage";
 import CreditCardSignup from "./pages/CreditCardPage";
 import OrdersPage from "./pages/OrdersPage";
 import ProductsPage from "./pages/ProductsPage";
+import AdminLogin from "./pages/AdminLogin";
+import AdminProductsPage from "./pages/AdminProductsPage";
 import "./index.css";
 
 
@@ -27,6 +29,8 @@ export default function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/orders" element={<OrdersPage />} />
           <Route path="/products" element={<ProductsPage />} />
+          <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/admin-products" element={<AdminProductsPage />} />
         </Routes>
       </main>
       <Footer />
