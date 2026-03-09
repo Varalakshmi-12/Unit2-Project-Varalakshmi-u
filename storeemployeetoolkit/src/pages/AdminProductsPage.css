@@ -1,0 +1,48 @@
+.admin-products-container {
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+    padding: 20px;
+    }
+.product-form {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.product-form input {
+    flex: 1;
+    padding: 8px;
+}
+.products-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.products-table th,
+.products-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+.edit-button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.edit-button:hover {
+    background-color: #45a049;
+}
+.delete-button {
+    background-color: #f48b36;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.delete-button:hover {
+    background-color: #da190b;
+}
+

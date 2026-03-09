@@ -174,6 +174,8 @@ return (
           value={phoneNumber}
           onChange={(e) => setPhoneNumber(e.target.value)}
         />
+        </div>
+      <div className="item-input-section">
         <input
           type="text"
           placeholder="Enter item name or ID"
@@ -198,7 +200,7 @@ return (
         <h3>Total: ${total.toFixed(2)}</h3>
       </div>
 
-      <Button label="Pay Now" onClick={handlePayment} />
+      <Button label="submit" onClick={handlePayment} />
       </div>
 
       <nav className="nav-home">

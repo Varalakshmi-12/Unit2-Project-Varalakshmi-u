@@ -32,3 +32,59 @@ export async function getProducts(){
         throw err;
     }
 }
+
+export async function getProductById(productId){
+    try {
+        const res = await fetch(`${BASE_URL}/Products/${productId}`);
+        if (!res.ok) throw new Error("Failed to fetch product by ID: " + res.status);
+        return await res.json();
+    } catch (err) {
+        console.error(err);
+        throw err;
+    }
+}
+
+export async function addProduct(product){
+    try {
+        const res = await fetch(`${BASE_URL}/Products`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(product)
+        });
+        if (!res.ok) throw new Error("Failed to add product: " + res.status);
+        return await res.json();
+    } catch (err) {
+        console.error(err);
+        throw err;
+    }
+
+}
+
+/*export async function addProduct(product) {
+  const res = await fetch(`${BASE_URL}/Products` , {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(product)
+  });
+  return res.json();
+}*/
+
+
+
+export async function updateProduct(id, product) {
+  const res = await fetch(`${BASE_URL}/Products/${id}`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(product)
+  });
+  return res.json();
+
+}
+
+export async function deleteProduct(id) {
+  await fetch(`${BASE_URL}/Products/${id}`, {
+    method: "DELETE"
+  });
+}
+
+

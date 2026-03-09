@@ -20,7 +20,7 @@ export default function ProductsPage() {
     const columns = [
         { header: "ID", accessor: "id" },
         { header: "Product Number", accessor: "productNumber" },
-        { header: "ProductName", accessor: "name" },
+        { header: "ProductName", accessor: "productName" },
         { header: "Price ($)", accessor: "price" },
     ];
 
