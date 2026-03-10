@@ -14,14 +14,12 @@ function Navbar() {
         <nav className="navbar">
 
       <div className="logo">
-        Store Toolkit
+        Admin Toolkit
       </div>
 
       <ul className="nav-links">
 
-        {/*li>
-          <Link to="/products">Products</Link>
-        </li>*/}
+        
 
         {isAdmin && (
           <li>
