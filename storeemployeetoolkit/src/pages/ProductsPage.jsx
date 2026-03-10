@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import DataTable from "../components/DataTable";
 import { getProducts } from "../services/api";
 import "./ProductsPage.css";
+import Navbar from "../components/Navbar";
 
 export default function ProductsPage() {
     const [products , setProducts] = useState([]);
@@ -26,6 +27,7 @@ export default function ProductsPage() {
 
     return (
     <section className="products-section">
+      <Navbar />
       <h2>Available Products</h2>
       <DataTable data={products} columns={columns} />
 

@@ -12,6 +12,7 @@ import OrdersPage from "./pages/OrdersPage";
 import ProductsPage from "./pages/ProductsPage";
 import AdminLogin from "./pages/AdminLogin";
 import AdminProductsPage from "./pages/AdminProductsPage";
+import AdminPage from "./pages/AdminPage";
 import "./index.css";
 
 
@@ -31,6 +32,7 @@ export default function App() {
           <Route path="/products" element={<ProductsPage />} />
           <Route path="/admin-login" element={<AdminLogin />} />
           <Route path="/admin-products" element={<AdminProductsPage />} />
+          <Route path="/admin" element={<AdminPage />} />
         </Routes>
       </main>
       <Footer />
