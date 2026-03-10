@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getProducts, addProduct, updateProduct, deleteProduct } from "../services/api";
 import "./AdminProductsPage.css";
+import Navbar from "../components/Navbar";
 export default function AdminProductsPage(){
 
   const [products,setProducts] = useState([]);
@@ -10,13 +11,13 @@ export default function AdminProductsPage(){
   const [editingId,setEditingId] = useState(null);
 
   useEffect(()=>{
-    //const isAdmin = localStorage.getItem("isAdmin");
+    const isAdmin = localStorage.getItem("isAdmin");
 
-  /*if(!isAdmin){
+  if(!isAdmin){
     alert("Unauthorized access");
-    window.location.href="/";
+    window.location.href="/admin-login";
   }
-    */loadProducts();
+    loadProducts();
   },[])
 
   const loadProducts = () =>{
@@ -55,6 +56,7 @@ export default function AdminProductsPage(){
   return(
 
     <div className="admin-products-container"> 
+    < Navbar />
 
       <h2>Product Management</h2>
         <div className="product-form">

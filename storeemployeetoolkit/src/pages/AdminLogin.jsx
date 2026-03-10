@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "../components/Navbar";
 export default function AdminLogin(){
 
   const [password,setPassword] = useState("");
@@ -7,7 +8,7 @@ export default function AdminLogin(){
 
   const handleLogin = () => {
 
-    if(password === "admin123"){
+    if(password === "admin1234"){
       localStorage.setItem("isAdmin","true");
       navigate("/admin-products");
     }else{
@@ -17,6 +18,7 @@ export default function AdminLogin(){
 
   return(
     <div>
+      <Navbar />
 
       <h2>Admin Login</h2>
 
