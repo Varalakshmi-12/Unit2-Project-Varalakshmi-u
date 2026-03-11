@@ -121,7 +121,7 @@ export default function OrdersPage() {
                 <ul>
                   {order.items.map(item => (
                     <li key={item.id}>
-                      {item.productNumber} — {item.productName} ({item.quantity} )× ${item.price}
+                      {item.productNumber}-{item.productName}({item.quantity})×${item.price}
                     </li>
                   ))}
                 </ul>
