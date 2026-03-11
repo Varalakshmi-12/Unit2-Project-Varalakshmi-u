@@ -9,6 +9,7 @@ export default function AdminProductsPage(){
   const [price,setPrice] = useState("");
   const [productNumber,setProductNumber] = useState("");
   const [editingId,setEditingId] = useState(null);
+  const [error, setError] = useState("");
 
   useEffect(()=>{
     const isAdmin = localStorage.getItem("isAdmin");
@@ -27,19 +28,24 @@ export default function AdminProductsPage(){
   const handleSubmit = async () => {
 
     const product = { productName:productName, productNumber:productNumber ,price:Number(price) };
-
+    try{
     if(editingId){
       await updateProduct(editingId, product);
       setEditingId(null);
     }else{
       await addProduct(product);
+      //setError("err");
     }
 
     setProductName("");
     setPrice("");
     setProductNumber("");
+    setError("");
     loadProducts();
+    }catch(err){
+      setError("Failed to save product: " + err.message);
     }
+  }
 
   const handleEdit = (product) =>{
     setProductName(product.productName);
@@ -84,6 +90,7 @@ export default function AdminProductsPage(){
         {editingId ? "Update Product" : "Add Product"}
       </button>
       </div>
+      {error && <p className="error-message">{error}</p>}
 
       <table border="1" cellPadding="10" cellSpacing="0" className="products-table">
 
