@@ -6,6 +6,7 @@ import com.example.storeemployeetoolkit_backend.dto.ProductDTO;
 import com.example.storeemployeetoolkit_backend.models.Product;
 import com.example.storeemployeetoolkit_backend.repositories.ProductRepository;
 import com.example.storeemployeetoolkit_backend.services.ProductService;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
@@ -25,9 +26,23 @@ public class ProductController {
         return service.getAllProducts();
     }
 
+    /*@PostMapping
+    //public Product create(@RequestBody ProductDTO dto) {
+        //return service.createProduct(dto);
+    }*/
     @PostMapping
-    public Product create(@RequestBody ProductDTO dto) {
-        return service.createProduct(dto);
+    public ResponseEntity<?> createProduct(@RequestBody ProductDTO dto){
+
+        try{
+            Product product = service.createProduct(dto);
+            return ResponseEntity.ok(product);
+
+        }catch(RuntimeException e){
+
+            return ResponseEntity
+                    .badRequest()
+                    .body(e.getMessage());
+        }
     }
 
     @PutMapping("/{id}")
