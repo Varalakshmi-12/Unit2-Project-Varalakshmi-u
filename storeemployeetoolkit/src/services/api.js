@@ -44,7 +44,7 @@ export async function getProductById(productId){
     }
 }
 
-export async function addProduct(product){
+/*export async function addProduct(product){
     try {
         const res = await fetch(`${BASE_URL}/Products`, {
             method: "POST",
@@ -54,10 +54,25 @@ export async function addProduct(product){
         if (!res.ok) throw new Error("Failed to add product: " + res.status);
         return await res.json();
     } catch (err) {
-        console.error(err);
+        //console.error(err);
         throw err;
     }
 
+}*/
+export async function addProduct(product){
+    const res = await fetch(`${BASE_URL}/Products`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(product)
+    });
+
+    const data = await res.json();
+
+    if (!res.ok) {
+        throw new Error(data.message || "Product number already exists");
+    }
+
+    return data;
 }
 
 /*export async function addProduct(product) {
