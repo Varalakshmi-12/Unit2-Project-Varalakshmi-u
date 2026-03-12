@@ -43,7 +43,7 @@ export default function AdminProductsPage(){
     setError("");
     loadProducts();
     }catch(err){
-      setError("Failed to save product: " + err.message);
+      setError( err.message);
     }
   }
 
