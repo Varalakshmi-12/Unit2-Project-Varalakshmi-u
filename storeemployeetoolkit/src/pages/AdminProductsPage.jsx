@@ -70,12 +70,14 @@ export default function AdminProductsPage(){
       <input
         placeholder="Product Name"
         value={productName}
+        disabled={editingId !== null}
         onChange={(e)=>setProductName(e.target.value)}
       />
       <input
         placeholder="Product Number"
         type="number"
         value={productNumber}
+        disabled={editingId !== null}
         onChange={(e)=>setProductNumber(e.target.value)}
       />
 
