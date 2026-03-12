@@ -9,6 +9,7 @@ import com.example.storeemployeetoolkit_backend.services.ProductService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/Products")
@@ -41,14 +42,30 @@ public class ProductController {
 
             return ResponseEntity
                     .badRequest()
-                    .body(e.getMessage());
+                    .body(Map.of("e.message",e.getMessage()));
         }
     }
 
-    @PutMapping("/{id}")
+    /*@PutMapping("/{id}")
     public Product update(@PathVariable Long id, @RequestBody ProductDTO dto) {
         dto.setId(id);
         return service.updateProduct(id , dto);
+    }*/
+    @PutMapping("/{id}")
+    public ResponseEntity<?> updateProduct(@PathVariable Long id,
+                                           @RequestBody ProductDTO dto) {
+
+        try {
+
+            Product updatedProduct = service.updateProduct(id, dto);
+            return ResponseEntity.ok(updatedProduct);
+
+        } catch (RuntimeException e) {
+
+            return ResponseEntity
+                    .badRequest()
+                    .body(Map.of("message", e.getMessage()));
+        }
     }
 
     @DeleteMapping("/{id}")

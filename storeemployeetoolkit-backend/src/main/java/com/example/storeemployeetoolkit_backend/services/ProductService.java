@@ -1,11 +1,13 @@
 package com.example.storeemployeetoolkit_backend.services;
 
 import com.example.storeemployeetoolkit_backend.dto.ProductDTO;
+
 import com.example.storeemployeetoolkit_backend.models.Product;
 import com.example.storeemployeetoolkit_backend.repositories.ProductRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+//import java.util.Optional;
 
 @Service
 public class ProductService {
@@ -20,7 +22,7 @@ public class ProductService {
     public Product createProduct(ProductDTO dto) {
 
         if (repo.existsByProductNumber(dto.getProductNumber())) {
-            throw new RuntimeException("Product number already exists");
+            throw new RuntimeException("Product number already exists it must be unique");
         }
 
         Product product = new Product();
@@ -44,7 +46,7 @@ public class ProductService {
     }
 
     // UPDATE
-    public Product updateProduct(Long id, ProductDTO dto) {
+    /*public Product updateProduct(Long id, ProductDTO dto) {
 
         Product product = getProductById(id);
 
@@ -54,7 +56,24 @@ public class ProductService {
 
 
         return repo.save(product);
+    }*/
+    public Product updateProduct(Long id, ProductDTO dto) {
+
+        Product product = getProductById(id);
+
+
+
+        if (repo.existsByProductNumber(dto.getProductNumber())) {
+            throw new RuntimeException("Product number already exists not updated");
+        }
+
+        product.setProductName(dto.getProductName());
+        product.setProductNumber(dto.getProductNumber());
+        product.setPrice(dto.getPrice());
+
+        return repo.save(product);
     }
+
 
     // DELETE
     public void deleteProduct(Long id) {
