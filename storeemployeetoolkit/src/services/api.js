@@ -69,7 +69,7 @@ export async function addProduct(product){
     const data = await res.json();
 
     if (!res.ok) {
-        throw new Error(data.message || "Product number already exists");
+        throw new Error(data.message || "ProductNumber already exists: " );
     }
 
     return data;
@@ -83,10 +83,25 @@ export async function addProduct(product){
   });
   return res.json();
 }*/
+export async function updateProduct(id,product){
+
+    const res = await fetch(`${BASE_URL}/Products/${id}`,{
+        method:"PUT",
+        headers:{ "Content-Type":"application/json"},
+        body:JSON.stringify(product)
+    });
+
+    const data = await res.json();
+
+    if(!res.ok){
+        throw new Error(data.message || "Product number already exists not updated");
+    }
+
+    return data;
+}
 
 
-
-export async function updateProduct(id, product) {
+/*export async function updateProduct(id, product) {
   const res = await fetch(`${BASE_URL}/Products/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
@@ -94,7 +109,7 @@ export async function updateProduct(id, product) {
   });
   return res.json();
 
-}
+}*/
 
 export async function deleteProduct(id) {
   await fetch(`${BASE_URL}/Products/${id}`, {
