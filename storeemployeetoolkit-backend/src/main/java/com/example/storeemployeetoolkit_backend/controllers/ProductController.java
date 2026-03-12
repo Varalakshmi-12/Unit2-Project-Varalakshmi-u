@@ -27,10 +27,7 @@ public class ProductController {
         return service.getAllProducts();
     }
 
-    /*@PostMapping
-    //public Product create(@RequestBody ProductDTO dto) {
-        //return service.createProduct(dto);
-    }*/
+
     @PostMapping
     public ResponseEntity<?> createProduct(@RequestBody ProductDTO dto){
 
@@ -46,11 +43,7 @@ public class ProductController {
         }
     }
 
-    /*@PutMapping("/{id}")
-    public Product update(@PathVariable Long id, @RequestBody ProductDTO dto) {
-        dto.setId(id);
-        return service.updateProduct(id , dto);
-    }*/
+
     @PutMapping("/{id}")
     public ResponseEntity<?> updateProduct(@PathVariable Long id,
                                            @RequestBody ProductDTO dto) {
