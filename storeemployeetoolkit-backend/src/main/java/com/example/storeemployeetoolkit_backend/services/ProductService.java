@@ -1,19 +1,14 @@
 package com.example.storeemployeetoolkit_backend.services;
 
 import com.example.storeemployeetoolkit_backend.dto.ProductDTO;
-
 import com.example.storeemployeetoolkit_backend.models.Product;
 import com.example.storeemployeetoolkit_backend.repositories.ProductRepository;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
-
 
 @Service
 public class ProductService {
-
     private final ProductRepository repo;
-
     public ProductService(ProductRepository repo) {
         this.repo = repo;
     }
@@ -29,8 +24,6 @@ public class ProductService {
         product.setProductNumber(dto.getProductNumber());
         product.setProductName(dto.getProductName());
         product.setPrice(dto.getPrice());
-
-
         return repo.save(product);
     }
 
@@ -54,7 +47,6 @@ public class ProductService {
 
         // Only update price
         product.setPrice(dto.getPrice());
-
         return repo.save(product);
     }
 
