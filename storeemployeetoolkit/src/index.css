@@ -3,15 +3,13 @@
   color: black;
   max-width: 1248px;
   margin: 0 auto;
-  
   text-align: center;
   font-size: 20px;
 }
 
 .main-content{
    padding-bottom:300px;
-
-   }
+  }
 
 .shift-message {
   margin-top: 20px;
@@ -41,60 +39,21 @@
 }
 }
 
-
 /* Medium screens (tablet) */
 @media (min-width: 481px) and (max-width: 696px) {
   .button-display {
-   
    flex: 1 1 45%;
-    
-    
   }
   .nav-right {
     flex-direction: column;
     gap :10px;
   }
   .shift-buttons {
-  
-   
-   flex: 1 1 45%;
-    
-}
-
-  
+    flex: 1 1 45%;
+  }
 }
 
 /* Small screens (mobile) */
-/*@media (max-width: 480px) {
-  .button-display {
-    flex-direction: column;
-    gap: 200px;
-  }
-  
-  .nav-right {
-    flex-direction: column;
-    gap :10px;
-  }
-
-  .Button-label{
-    font-size: 20;
-  }
-
-.shift-buttons {
-  flex-direction: column;
-}
-  
-
-  
-  .header-title {
-    font-size: 20px;
-
-  }
-
-  .footer {
-    font-size: 16px;
-  }
-}*/
 @media (max-width: 480px) {
   .button-display {
     flex-direction: column;
@@ -118,5 +77,15 @@
   }
   .orders-table li{
     margin-bottom: 0px;
+  }
+  .shift-buttons {
+  flex-direction: column;
+  gap:20px;
+  }
+.header-title {
+    font-size: 20px;
+  }
+  .footer {
+    font-size: 16px;
   }
 }

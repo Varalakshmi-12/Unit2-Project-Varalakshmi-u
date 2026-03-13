@@ -34,7 +34,6 @@ export default function AdminProductsPage(){
       setEditingId(null);
     }else{
       await addProduct(product);
-      //setError("err");
     }
 
     setProductName("");
@@ -63,8 +62,7 @@ export default function AdminProductsPage(){
 
     <div className="admin-products-container"> 
     < Navbar />
-
-      <h2>Product Management</h2>
+    <h2>Product Management</h2>
         <div className="product-form">
 
       <input

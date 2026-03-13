@@ -1,7 +1,5 @@
-//import React from react;
 import {Link , useNavigate} from 'react-router-dom';
 import './Navbar.css';
-
 
 function Navbar() {
   const navigate = useNavigate();
@@ -11,16 +9,13 @@ function Navbar() {
     };
 
     return (
-        <nav className="navbar">
+      <nav className="navbar">
 
       <div className="logo">
         Admin Toolkit
       </div>
 
       <ul className="nav-links">
-
-        
-
         {isAdmin && (
           <li>
             <Link to="/admin-products">Admin</Link>
