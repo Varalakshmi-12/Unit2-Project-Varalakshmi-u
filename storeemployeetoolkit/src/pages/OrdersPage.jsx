@@ -86,7 +86,7 @@ export default function OrdersPage() {
     };
 
   return (
-    <section className="orders-container">
+    <div className="orders-container">
       <h1>All Orders</h1>
       {error && <p className="error">{error}</p>}
 
@@ -100,7 +100,7 @@ export default function OrdersPage() {
         <Button label="Search" onClick={handleSearch} />
       </div>
 
-      <table className="orders-table">
+      <table border="1" cellPadding="10" cellSpacing="0" className="orders-table">
         <thead>
           <tr>
             <th>Order ID</th>
@@ -133,6 +133,6 @@ export default function OrdersPage() {
       <Link to="/">
         <Button label="Back to Home" />
       </Link>
-    </section>
+    </div>
   );
 }
