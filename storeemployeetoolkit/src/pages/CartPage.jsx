@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-//import { mockItems} from "../testdata/mockData";
 import CartItem from "../components/CartItem";
 import Button from "../components/Button";
 import { Link } from "react-router-dom";
 import "./CartPage.css";
-
 
 export default function CartPage() {
   const [itemInput, setItemInput] = useState("");
@@ -17,19 +15,9 @@ export default function CartPage() {
   return /^\d{10}$/.test(phoneNumber);
 };
 
-
-  // Adding item by name or ID
+// Adding item by  ID
   const addItem = async () => {
     if (!itemInput.trim()) return;
-
-    /*const userInput = itemInput.toLowerCase();
-
-    const found =
-      mockItems.find(
-        (item) =>
-          item.name.toLowerCase() === userInput ||
-          item.id.toString() === userInput
-      );*/
 
     try {
         const res = await fetch(
@@ -38,16 +26,11 @@ export default function CartPage() {
           if (!res.ok) {
             throw new Error("Failed to fetch products" +res.status);
           }
-        
+        //fetching all products and finding the one that matches the input 
         const products = await res.json();
-        console.log("Fetched products:", products);
         const found = products.find((p) => p.productNumber.toString().toLowerCase() === itemInput.toLowerCase());
-        console.log(found);
-      
-
-    if (!found) {
+        if (!found) {
       setMessage("❌ Product not found!");
-
       return;
     }
     
@@ -69,8 +52,6 @@ export default function CartPage() {
     setMessage("❌ Error fetching products!");
   }
   };
-
-
   const handlePayment = async () => {
 
     if (!customerName.trim())  {
@@ -107,29 +88,18 @@ export default function CartPage() {
       });
       if (!res.ok) throw new Error("Failed to save order");
       console.log("Order saved successfully");
-    
-    //setMessage("processing.....");
-    
-    //setTimeout(() => {
+      // Clear cart and inputs after successful order
       setMessage("✅ Payment Successful! Your Order is Saved successfully.");
       setCart([]); 
       setCustomerName("");
       setPhoneNumber("");
-      
-    //}, 2000);
-    
-  }catch (err) {
+    }catch (err) {
     setMessage("❌ Error saving Order.");
   }
 };
-
-
-  
   const updateQuantity = (productNumber, value) => {
     const qty = parseInt(value);
     if (qty < 1 || isNaN(qty)) return;
-
-
     setCart((prev) =>
       prev.map((item) =>
         item.productNumber === productNumber ? { ...item, quantity: qty } : item
@@ -150,18 +120,11 @@ export default function CartPage() {
   const tax = subtotal * 0.08;
   const total = subtotal + tax;
 
-
-
-
 return (
     <section>
       <div className="cart-container">
-    
-
       <h1>Customer Cart Checkout</h1>
-
       <div className="input-section">
-
         <input
           type="text"
           placeholder="Enter customer name"
@@ -184,7 +147,6 @@ return (
         />
 
         <Button label="Add Item" onClick={addItem} />
-        
         
       </div>
       {message && <p className="message">{message}</p>}

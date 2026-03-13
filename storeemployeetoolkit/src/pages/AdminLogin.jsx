@@ -19,16 +19,13 @@ export default function AdminLogin(){
   return(
     <div>
       <Navbar />
-
       <h2>Admin Login</h2>
-
       <input
         type="password"
         placeholder="Enter admin password"
         value={password}
         onChange={(e)=>setPassword(e.target.value)}
       />
-
       <button onClick={handleLogin}>Login</button>
 
     </div>

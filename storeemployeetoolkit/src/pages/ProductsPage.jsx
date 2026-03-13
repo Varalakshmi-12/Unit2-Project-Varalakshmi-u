@@ -14,10 +14,8 @@ export default function ProductsPage() {
         .then(data => setProducts(data))
         .catch(err => console.error("Failed to load products:", err));
     }, []);
-    console.log("Products data:", products);
     
     
-
     const columns = [
         { header: "ID", accessor: "id" },
         { header: "Product Number", accessor: "productNumber" },

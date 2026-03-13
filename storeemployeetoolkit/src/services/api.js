@@ -6,7 +6,7 @@ export async function getOrders(){
         if (!res.ok) throw new Error("Failed to fetch orders: " + res.status);
         return await res.json();
     } catch (err) {
-        console.error(err);
+        //console.error(err);
         throw err;
     }
 }
@@ -28,7 +28,7 @@ export async function getProducts(){
         if (!res.ok) throw new Error("Failed to fetch products: " + res.status);
         return await res.json();
     } catch (err) {
-        console.error(err);
+        //console.error(err);
         throw err;
     }
 }
@@ -39,7 +39,7 @@ export async function getProductById(productId){
         if (!res.ok) throw new Error("Failed to fetch product by ID: " + res.status);
         return await res.json();
     } catch (err) {
-        console.error(err);
+        //console.error(err);
         throw err;
     }
 }
