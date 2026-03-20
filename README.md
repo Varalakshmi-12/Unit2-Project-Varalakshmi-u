@@ -205,6 +205,14 @@ You can insert a screenshot or a Figma diagram here.
 </details>
 
 ---
+# Wireframe
+
+<details>
+<summary>https://www.figma.com/design/sNcOjJ5ASgYHBS4gT1Gge3/StoreEmployee-ToolKit--fullstack-?node-id=0-1&p=f&t=sYFlkZA69Xg3XvGM-0</summary>
+
+You can insert a screenshot or a Figma diagram here.
+
+</details>
 
 # :gear: API Endpoints
 
