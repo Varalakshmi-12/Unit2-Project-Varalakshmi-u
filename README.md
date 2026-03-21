@@ -19,7 +19,7 @@ The Store Employee Toolkit is a full-stack web application that helps store empl
 - Display **product details using child component**
 - Calculate **order totals with tax**
 - Communicate with backend using **Fetch API (async/await)**
-- Product management (CRUD operations)
+- Product management **(CRUD operations)**
 
 ### ⚙️ Backend
 - Built with **Java and Spring Boot**
