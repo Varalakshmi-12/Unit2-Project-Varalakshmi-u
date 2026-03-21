@@ -2,7 +2,9 @@
 
 ## 🏠 Homepage
 
-![Homepage](https://github.com/user-attachments/assets/58822c44-6af2-422c-9498-1979208fb65d)
+<img width="975" height="685" alt="image" src="https://github.com/user-attachments/assets/58822c44-6af2-422c-9498-1979208fb65d" />
+
+
 # 🛒 Store Employee Toolkit – Order & Product Management System
 
 
@@ -65,7 +67,7 @@ The Store Employee Toolkit is a full-stack web application that helps store empl
 - VS Code / IntelliJ IDEA
 
 ---
----
+
 
 # :rocket: Installation
 
@@ -80,7 +82,7 @@ To run this project locally you need:
 - MySQL
 
 
----
+
 
 # Backend Setup (Spring Boot)
 
@@ -203,26 +205,24 @@ Spring Boot Backend (Java)
 
 <details>
 <summary>https://dbdiagram.io/d/ERD-for-StoreEmployeeToolkit-69928d7ebd82f5fce2c899b4</summary>
-
-You can insert a screenshot or a Figma diagram here.
-
 </details>
-## 🏠 ERD
 
+## 📘 Database Schema (ER Diagram Description)
 
 <img width="975" height="685" alt="image" src="https://github.com/user-attachments/assets/d746a7df-fe03-4978-940f-c2d453d4c5b8" />
 
 
 ---
-# Wireframe
+#Wireframe link
 
 <details>
 <summary>https://www.figma.com/design/sNcOjJ5ASgYHBS4gT1Gge3/StoreEmployee-ToolKit--fullstack-?node-id=0-1&p=f&t=sYFlkZA69Xg3XvGM-0</summary>
-![ERD](https://github.com/user-attachments/assets/d746a7df-fe03-4978-940f-c2d453d4c5b8)
-
-You can insert a screenshot or a Figma diagram here.
-
 </details>
+
+## 📝Wireframing
+
+<img width="975" height="685" alt="image" src="https://github.com/user-attachments/assets/8ba4c788-90ba-42d7-8a4a-729c3ba63e67" />
+
 
 # :gear: API Endpoints
 
