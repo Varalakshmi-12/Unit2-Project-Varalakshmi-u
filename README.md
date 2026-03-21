@@ -135,7 +135,7 @@ spring.jpa.properties.hibernate.format_sql=true
 mvn spring-boot:run
 ```
 
-:large_green_circle: The backend will run at:
+🟢The backend will run at:
 
 ```
 http://localhost:8080
@@ -167,7 +167,7 @@ npm install
 npm run dev
 ```
 
-:large_green_circle: The frontend will run at:
+🟢The frontend will run at:
 
 ```
 http://localhost:5173
