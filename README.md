@@ -207,12 +207,18 @@ Spring Boot Backend (Java)
 You can insert a screenshot or a Figma diagram here.
 
 </details>
+## 🏠 ERD
+
+
+<img width="975" height="685" alt="image" src="https://github.com/user-attachments/assets/d746a7df-fe03-4978-940f-c2d453d4c5b8" />
+
 
 ---
 # Wireframe
 
 <details>
 <summary>https://www.figma.com/design/sNcOjJ5ASgYHBS4gT1Gge3/StoreEmployee-ToolKit--fullstack-?node-id=0-1&p=f&t=sYFlkZA69Xg3XvGM-0</summary>
+![ERD](https://github.com/user-attachments/assets/d746a7df-fe03-4978-940f-c2d453d4c5b8)
 
 You can insert a screenshot or a Figma diagram here.
 
