@@ -1,6 +1,10 @@
 # 🛒 Store Employee Toolkit – Order & Product Management System
 
-![Homepage](./screenshots/homepage.png)
+## 🏠 Homepage
+
+![Homepage](https://github.com/user-attachments/assets/58822c44-6af2-422c-9498-1979208fb65d)
+# 🛒 Store Employee Toolkit – Order & Product Management System
+
 
 ## 📌 Project Overview
 
@@ -259,6 +263,10 @@ You can insert a screenshot or a Figma diagram here.
 
 # :technologist: Author
 
-Varalakshmi
+Varalakshmi Uppara
+
+Full-Stack Developer (React + Spring Boot) 
+
+LaunchCode Full-Stack Web Development Program
 
 ---
